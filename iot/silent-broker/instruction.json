@@ -1,0 +1,44 @@
+{
+  "activation": "next controlled cold start",
+  "batch": "d94ba350eb92d5aef86ef30170f73",
+  "cell": "L3",
+  "operation": "stage_calibration_recipe",
+  "parameters": [
+    {
+      "ch": 0,
+      "zero": -0.048
+    },
+    {
+      "ch": 1,
+      "zero": -0.036
+    },
+    {
+      "ch": 2,
+      "zero": -0.024
+    },
+    {
+      "ch": 3,
+      "zero": -0.012
+    },
+    {
+      "ch": 4,
+      "zero": 0.0
+    },
+    {
+      "ch": 5,
+      "zero": 0.012
+    },
+    {
+      "ch": 6,
+      "zero": 0.024
+    },
+    {
+      "ch": 7,
+      "zero": 0.036
+    }
+  ],
+  "receipt": "isfcr{d3l1v3r3d_n07_53n7_3e52ba22199f3d65bd896972}",
+  "route": "b7/14",
+  "schema": "commissioning-instruction/4",
+  "work_order": "WO-7316"
+}

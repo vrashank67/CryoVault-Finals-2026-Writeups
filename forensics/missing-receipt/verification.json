@@ -1,0 +1,27 @@
+{
+  "session_id": "6ecc22c6-2398-40c2-abd4-5601770684e3",
+  "started_utc": "2026-10-17T03:17:00Z",
+  "started_local": "2026-10-17 09:02:57",
+  "clock_lead_before_step_seconds": 957,
+  "connections": [
+    5,
+    6
+  ],
+  "accepted_length": 26997,
+  "spool_sha256": "7a012effadf82e1989c68144409299e8318bd726214d59e2039197473afb6eb1",
+  "relay_finish_status": 0,
+  "relay_receipt_hex": "201bb8480b7e64c0bc84c6d835446d3b",
+  "key_inode": 64,
+  "inode_generation": 158282948,
+  "aes_kw_integrity": "passed",
+  "aes_gcm_authentication": "passed",
+  "export_length": 26965,
+  "export_sha256": "dd6dc036c51b06e8729d244aa58dcb71a2e9b88f5dc279a0dafe3f3fcb39dad0",
+  "manifest": {
+    "host": "CRYO-LT-07",
+    "session_id": "6ecc22c6-2398-40c2-abd4-5601770684e3",
+    "work_order": "QX-17-CUSTODY"
+  },
+  "flag": "isfcr{th3_r3l4y_h4d_1ts_0wn_v3rs10n_597c}",
+  "submission": "not submitted"
+}

@@ -1,0 +1,204 @@
+{
+  "key": "5e7fdc96bb9a1607aebd0183fa31cabb50f7300462f11c5513a4d61acba0ec4a",
+  "count": "50",
+  "lineage": "0d53153826ac6f70",
+  "auth": "FL-KBUX-67FG-8APG",
+  "records": [
+    {
+      "seq": 268,
+      "host": "hallb-win-02",
+      "digest": "dd19dcc2d95916569144823286593ea1065d364414b042749f0328dc4bafa506",
+      "tag": "83a27238893b059d",
+      "pad": "5ebbaefa506213cb",
+      "crlf": [
+        [
+          "config\\README.md",
+          0
+        ],
+        [
+          "config\\site.yaml",
+          0
+        ],
+        [
+          "config\\calibration\\chiller-B.fwb",
+          0
+        ],
+        [
+          "config\\calibration\\probes.csv",
+          0
+        ],
+        [
+          "config\\halls\\A.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B2.yaml",
+          0
+        ],
+        [
+          "config\\halls\\C.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B\\alarms.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B\\chillers.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B\\pods.yaml",
+          0
+        ]
+      ]
+    },
+    {
+      "seq": 274,
+      "host": "hallb-win-03",
+      "digest": "bd2750ff811bcff94958c1f34cc0ae2c16f1478210b75b4def4dd8c80a664a64",
+      "tag": "61315135b1071915",
+      "pad": "dc1601ca301cd6ec",
+      "crlf": [
+        [
+          "config\\README.md",
+          7
+        ],
+        [
+          "config\\site.yaml",
+          10
+        ],
+        [
+          "config\\calibration\\chiller-B.fwb",
+          0
+        ],
+        [
+          "config\\calibration\\probes.csv",
+          0
+        ],
+        [
+          "config\\halls\\A.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B2.yaml",
+          0
+        ],
+        [
+          "config\\halls\\C.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B\\alarms.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B\\chillers.yaml",
+          4
+        ],
+        [
+          "config\\halls\\B\\pods.yaml",
+          0
+        ]
+      ]
+    },
+    {
+      "seq": 279,
+      "host": "hallb-win-01",
+      "digest": "a7f2902ea4c1f4adb43c31a92e3891f96058021999211896c2cdd517e90ccc0c",
+      "tag": "31f51395a094eee7",
+      "pad": "960783bb04551a4a",
+      "crlf": [
+        [
+          "config\\README.md",
+          7
+        ],
+        [
+          "config\\site.yaml",
+          10
+        ],
+        [
+          "config\\calibration\\chiller-B.fwb",
+          0
+        ],
+        [
+          "config\\calibration\\probes.csv",
+          0
+        ],
+        [
+          "config\\halls\\A.yaml",
+          29
+        ],
+        [
+          "config\\halls\\B2.yaml",
+          0
+        ],
+        [
+          "config\\halls\\C.yaml",
+          26
+        ],
+        [
+          "config\\halls\\B\\alarms.yaml",
+          5
+        ],
+        [
+          "config\\halls\\B\\chillers.yaml",
+          4
+        ],
+        [
+          "config\\halls\\B\\pods.yaml",
+          0
+        ]
+      ]
+    },
+    {
+      "seq": 281,
+      "host": "hallb-win-03",
+      "digest": "17ecbc4ab87cb399c33012d3c8fa8c2a1396bb26f89ecafadf469502f367ab90",
+      "tag": "6876017b4f8d1739",
+      "pad": "7f9abd31f7f1a4a0",
+      "crlf": [
+        [
+          "config\\README.md",
+          7
+        ],
+        [
+          "config\\site.yaml",
+          10
+        ],
+        [
+          "config\\calibration\\chiller-B.fwb",
+          0
+        ],
+        [
+          "config\\calibration\\probes.csv",
+          0
+        ],
+        [
+          "config\\halls\\A.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B2.yaml",
+          0
+        ],
+        [
+          "config\\halls\\C.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B\\alarms.yaml",
+          0
+        ],
+        [
+          "config\\halls\\B\\chillers.yaml",
+          4
+        ],
+        [
+          "config\\halls\\B\\pods.yaml",
+          0
+        ]
+      ]
+    }
+  ]
+}

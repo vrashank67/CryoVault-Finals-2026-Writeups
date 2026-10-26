@@ -1,0 +1,120 @@
+=== attempt 1 ===
+thawd 7.3 pod 07 session 06eda03b409c9c65 meter 188458 ready
+meter q=59 halt_cost=3 overhead=2 residue=2
+SEAL base charge=1
+P[00]=bf plans=763
+  addr word range [0x0,0x2000) plans=776
+  addr word range [0x0,0x1000) plans=783
+  addr word range [0x800,0x1000) plans=784
+  addr word range [0x800,0xc00) plans=791
+  addr word range [0xa00,0xc00) plans=792
+  addr word range [0xb00,0xc00) plans=793
+  addr word range [0xb80,0xc00) plans=794
+  addr word range [0xbc0,0xc00) plans=795
+  addr word range [0xbe0,0xc00) plans=796
+  addr word range [0xbe0,0xbf0) plans=803
+  addr word range [0xbe0,0xbe8) plans=810
+  addr word range [0xbe4,0xbe8) plans=811
+  addr word range [0xbe6,0xbe8) plans=812
+  addr word range [0xbe6,0xbe7) plans=819
+SRC[00]=0x17cd plans=820
+START bf ['0x17cd'] window ['0x17ae', '0x17ec'] plans 820
+P[01]=e6 plans=1050
+SRC[01]=0x17dd plans=1086
+  ADDRS 17cd 17dd
+P[02]=cb plans=1289
+SRC[02]=0x17c5 plans=1319
+  ADDRS 17cd 17dd 17c5
+P[03]=ee plans=1557
+SRC[03]=0x17d3 plans=1586
+  ADDRS 17cd 17dd 17c5 17d3
+P[04]=f4 plans=1830
+SRC[04]=0x17da plans=1848
+  ADDRS 17cd 17dd 17c5 17d3 17da
+P[05]=f1 plans=2089
+SRC[05]=0x17d5 plans=2112
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5
+P[06]=6f plans=2223
+SRC[06]=0x17d7 plans=2246
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7
+P[07]=36 plans=2300
+SRC[07]=0x17de plans=2323
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de
+P[08]=69 plans=2428
+SRC[08]=0x17e1 plans=2451
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1
+P[09]=a2 plans=2613
+SRC[09]=0x17c6 plans=2641
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6
+P[10]=45 plans=2710
+SRC[10]=0x17dc plans=2733
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc
+P[11]=c1 plans=2926
+SRC[11]=0x17c8 plans=2955
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8
+P[12]=a4 plans=3119
+SRC[12]=0x17d8 plans=3142
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8
+P[13]=ae plans=3316
+SRC[13]=0x17ca plans=3344
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca
+P[14]=36 plans=3398
+SRC[14]=0x17df plans=3421
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df
+P[15]=4b plans=3496
+SRC[15]=0x17e0 plans=3512
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0
+P[16]=0c plans=3524
+SRC[16]=0x17d0 plans=3552
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0
+P[17]=dc plans=3772
+SRC[17]=0x17db plans=3788
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db
+P[18]=78 plans=3908
+SRC[18]=0x17d4 plans=3924
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4
+P[19]=8e plans=4066
+SRC[19]=0x17e2 plans=4082
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2
+P[20]=fc plans=4334
+SRC[20]=0x17cc plans=4356
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc
+P[21]=24 plans=4392
+SRC[21]=0x17d6 plans=4414
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6
+P[22]=07 plans=4421
+SRC[22]=0x17ce plans=4437
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce
+P[23]=e8 plans=4669
+SRC[23]=0x17cf plans=4690
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf
+P[24]=8f plans=4833
+SRC[24]=0x17c9 plans=4855
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf 17c9
+P[25]=28 plans=4895
+SRC[25]=0x17e3 plans=4911
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf 17c9 17e3
+P[26]=dc plans=5131
+SRC[26]=0x17d1 plans=5152
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf 17c9 17e3 17d1
+P[27]=8e plans=5294
+SRC[27]=0x17d9 plans=5309
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf 17c9 17e3 17d1 17d9
+P[28]=d6 plans=5523
+SRC[28]=0x17e4 plans=5532
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf 17c9 17e3 17d1 17d9 17e4
+P[29]=cb plans=5735
+SRC[29]=0x17d2 plans=5743
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf 17c9 17e3 17d1 17d9 17e4 17d2
+P[30]=04 plans=5747
+SRC[30]=0x17c7 plans=5760
+  ADDRS 17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf 17c9 17e3 17d1 17d9 17e4 17d2 17c7
+P[31]=57 PROFILE=bfe6cbeef4f16f3669a245c1a4ae364b0cdc788efc2407e88f28dc8ed6cb0457 plans=5848
+SRC[31]=0x17cb plans=5848
+LADDER=bfe6cbeef4f16f3669a245c1a4ae364b0cdc788efc2407e88f28dc8ed6cb0457
+ADDRS=17cd 17dd 17c5 17d3 17da 17d5 17d7 17de 17e1 17c6 17dc 17c8 17d8 17ca 17df 17e0 17d0 17db 17d4 17e2 17cc 17d6 17ce 17cf 17c9 17e3 17d1 17d9 17e4 17d2 17c7 17cb
+FOLD_PROFILE=cba204c18fae57fcbf07e80cdccbee78f1246fa48ef4dc45e636364b698e28d6
+final words 262 priv 163
+FINAL THAWED 358107 isfcr{pod_seven_4bde_woke_4364d220_in_bay_c}
+FLAG isfcr{pod_seven_4bde_woke_4364d220_in_bay_c}
+SOLVED isfcr{pod_seven_4bde_woke_4364d220_in_bay_c}

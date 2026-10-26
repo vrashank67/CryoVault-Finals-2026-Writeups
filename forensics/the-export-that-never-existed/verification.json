@@ -1,0 +1,76 @@
+{
+  "flag": "isfcr{c916c4f7b8ecccf073bf5cd6e815218f3622ba7c3500919f2a6b11f2db891b68}",
+  "bytes": 3147,
+  "batches": [
+    {
+      "batch": 0,
+      "planned": 21,
+      "exported": 15,
+      "quote_group": 20,
+      "release_group": 152,
+      "quote_meter": 18018,
+      "release_meter": 42780
+    },
+    {
+      "batch": 1,
+      "planned": 22,
+      "exported": 11,
+      "quote_group": 89,
+      "release_group": 125,
+      "quote_meter": 6877,
+      "release_meter": 10742
+    },
+    {
+      "batch": 2,
+      "planned": 21,
+      "exported": 15,
+      "quote_group": 34,
+      "release_group": 139,
+      "quote_meter": 65061,
+      "release_meter": 63565
+    },
+    {
+      "batch": 3,
+      "planned": 22,
+      "exported": 11,
+      "quote_group": 58,
+      "release_group": 140,
+      "quote_meter": 43163,
+      "release_meter": 43792
+    }
+  ],
+  "settlement": {
+    "0": [
+      6,
+      686879
+    ],
+    "1": [
+      8,
+      1088184
+    ],
+    "2": [
+      4,
+      394865
+    ],
+    "3": [
+      7,
+      888817
+    ],
+    "4": [
+      5,
+      1211515
+    ],
+    "5": [
+      7,
+      817805
+    ],
+    "6": [
+      7,
+      1674987
+    ],
+    "7": [
+      8,
+      1286620
+    ]
+  }
+}

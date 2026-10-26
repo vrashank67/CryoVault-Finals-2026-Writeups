@@ -1,0 +1,8 @@
+parsed superblock: magic FVR\x01, 3072 pages, 8/8 root slots fnv1a64 OK, live root pgid 1557 epoch 1861
+live tree: 24 leaves, 1205 records, no job/ keys (purged); page census kind1=8 kind2=31 free=2073 unused=959
+on-disk v1 layout confirmed: 16B cells, 32-bit offsets from page end, CRC32C bodies (39/39 live pages OK)
+job 8149285a1114b9b0 (48 segs, manifest created 2026-01-03T01:49:47Z) purged at epoch 1840, 4 keys
+recovered 72 abandoned job-leaf pages = full cursor history, all 48 seqs, segid matches log
+commit discriminator: later-epoch index child pointers (page order is NOT reliable); exactly 1 committed version per seq
+release code computed: FL-7LRS-N9V2-9HA2 -> isfcr{fl_7lrs_n9v2_9ha2} (sha256 ea9f067e...)
+SOLVED: 48/48 receipts resolved structurally (epoch+1 root pointer), all cross-checks pass; FLAG isfcr{fl_7lrs_n9v2_9ha2}; writeup.md + solve.py complete

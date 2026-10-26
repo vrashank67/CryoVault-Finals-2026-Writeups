@@ -1,0 +1,16 @@
+CRYOVAULT DEEP ARCHIVE :: SEALED RECORD
+record-id: CV-de627ab7-4c53
+custodian: archivist-35172e
+tier: cold / write-once / offline
+shelf-mark: R63-B229-S2581
+manifest-digest: c36bfad7e70c79db55bfd257d9f427bfcafa88fdf4f5833a385d3d0f0a9b111e
+witness-digest: cebefc36924ee592f42700962387f55abeceebb070ae37b2faa41251587da855
+provenance:
+  ingest  0b294112e57073ac182da6f281bee18bd79959a4c7f47425f372d4f7f20ec0ff
+  verify  99f570b68fad6e7cdd2db8b1fe671cbd138051be98596df305a83223002417ac
+  freeze  98a61a7115cea034f31b1137b3ce76535d6b7dd10c2fe22f300ea8275884fe83
+custody-chain: archivist -> vault -> cold-tier -> offline
+remark: the public code was certified indistinguishable from random.
+remark: the certificate was wrong, and so was the order of the tape.
+flag: isfcr{3c5123942fed6c7c30e2b041a31067c4cc23261f}
+seal: 751f07c62ad5af290a01c10b6e2e919ef55f5bc885d3ba6d

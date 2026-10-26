@@ -1,0 +1,24 @@
+Case RR3-063
+
+Acquisition from the sr RR-3 appliance simulator. These are simulated physical
+reads, not an image of a commercial NAND device or a mountable filesystem.
+
+chipN.rR: chip-select N, read-reference setting R. Each scan row is 2112 bytes
+(2048 main-area bytes and 64 spare-area bytes); no file header. No erase/program
+operations occurred between the three reads. No setting is globally preferred.
+
+nvram.bin and controller.elf are from the same appliance revision. The latter
+is the Linux x86-64 read-channel model, not the catalog, backup or client code.
+It has no active acquisition backend and needs no special device or privilege.
+Analyze unknown binaries in a sandbox. The catalog and link capture were
+acquired independently. service.txt is the appliance's interoperability note.
+
+No passwords, network access, external challenge service or proprietary tools
+are required. Physical decoding is represented in the read-channel image;
+upper-layer behavior is specified in the interoperability note. There is no
+intentional code obfuscation, anti-debug check, artificial delay or agent prompt.
+
+The uplink acquisition begins after TLS handshaking. It is a synthetic, standards-
+profile QUIC trace, not a capture taken from a production Internet endpoint.
+
+The capture exports retain selected datagrams, not a complete endpoint transcript.

@@ -1,0 +1,3 @@
+Original escrow.py: release approved.
+Frostline escrow: release approved. Row 7 firmware review for frost-n07 unsealed. Review reference isfcr{hpat392mv7v8qjerbxgjk5jy}
+Platform submission: not submitted; no destination identified in this request.

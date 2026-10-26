@@ -1,0 +1,113 @@
+RR-3 interoperability note, revision 4.0
+
+Integers are unsigned. All fixed-width integers are little-endian unless
+specified otherwise. Variable integers are unsigned LEB128, at most 64 bits.
+IDs are opaque byte strings. There is no lexicographic time order on IDs.
+CRC-32 is the reflected IEEE CRC. SHA-256 fields use lowercase hexadecimal.
+
+Link
+----
+UDP payload starts with a 44-byte network-order header: magic[4]="RRP2",
+version:u8=2, type:u8, JSON byte length:u16, session:u64, sequence:u64,
+request[16], JSON CRC-32:u32. JSON follows exactly. Message types are 1=READ,
+2=OFFER, 3=COMMIT, 4=CONFIRM, 5=CANCEL. COMMIT and CONFIRM carry ticket[16] and
+catalog cookie[32] in hex. A receipt is accepted only when a server COMMIT
+and client CONFIRM agree on the entire session/sequence/request/ticket/cookie.
+An offer is not an acceptance; retries may reuse a request in another session.
+Cookie is SHA-256 of the stored compressed catalog value, not its JSON encoding.
+
+Catalog 2
+---------
+SQLite page and WAL conventions are standard. Schema names are descriptive.
+Catalog values are zlib-compressed JSON. A locator is [chip, slot, cycle], with
+slot and cycle corresponding to the two u16 fields following R3PG in spare
+metadata. A valid CRC is a physical read check, not a logical version selector.
+Program stamps are per-attempt instrumentation and are not a total commit order.
+Several distinct read-valid payloads may share a locator. A referenced locator
+selects exactly one of them as constrained by the complete catalog equations.
+
+The catalog describes bytewise linear equations over GF(256), polynomial 0x11d.
+Each row payload is the sum of its named source-symbol coefficients. Symbols
+are 1024 bytes. The canonical source
+stream is concatenated in the listed order, truncated to the listed byte count,
+checked by SHA-256, then unpackaged and zlib-decompressed. No local hash
+identifies a row. Codec rr-package-1 is a whole-stream privacy package, not
+password encryption: split the final 32 bytes T from the preceding ciphertext C.
+K = T XOR SHA-256(ASCII "RR package 1" + NUL + C). AES-256-CTR with key K and
+an all-zero 16-byte initial counter decodes C to the compressed stream. CTR uses
+the standard big-endian increment. The package contains everything needed to
+invert it; there is no external key. It is not a password-cracking exercise.
+
+Pack 4
+------
+Magic[8]="RRPCK4\0\0", atom count:u32, namespace count:u32, node count:u32.
+Tables may occur in arbitrary ID order, but the three table classes are in
+that order. IDs and references are not process pointers.
+
+Atom: id[16], length:var, data[length].
+Namespace: id[16], base[16], operation count:var, operations.
+Operation 0x11: handle[6], node id[16] (bind).
+Operation 0x29: handle[6] (remove).
+Operation 0x3b: first handle[6], second handle[6] (exchange bindings).
+A handle is inode:u32 + incarnation:u16; the whole six bytes is the key.
+Namespaces are persistent: inherit the base, then apply operations in order.
+An all-zero namespace is empty. Removing an absent key is allowed. Exchanging
+one absent key moves the other binding. It does not modify older namespaces.
+
+Node: id[16], logical size:var, base reference[22], operation count:var,
+operations. Reference[22] is namespace id[16] + handle[6]. An unbound base
+supplies holes. For positions within the node, operations overwrite earlier
+ones; uncovered positions inherit the base at the same offset. Operations:
+0x17 destination:var, length:var, atom id[16], source offset:var (literal).
+0x35 destination:var, length:var, reference[22], source offset:var (clone).
+0x52 destination:var, length:var (hole).
+0x68 destination:var, length:var (allocated zero).
+Clone preserves both byte values and allocation state. Source references bind
+in their own immutable namespace, never in the caller's or newest namespace.
+Coordinates outside a node's logical size are holes. Logical offsets and sizes
+can exceed 32 bits; holes have no data payload and need not be expanded. Reclaimed references can
+occur in overwritten ranges. Only dependencies of final requested coordinates
+are live. Object-reference cycles are permitted; requested coordinate
+expressions must terminate. A literal or allocated zero is allocated; a hole
+is not, even though reads of either return zero. This is simulator metadata,
+not a promise about host SEEK_HOLE behavior.
+
+View: "R4VW", namespace[16], handle[6], offset:u64, length:u64.
+Canonical export: "R4SP", requested length:u64 big-endian, then maximal runs
+of equal allocation state, in ascending view-relative coordinate order.
+Run: allocation:u8 (0 or 1), start:u64 big-endian, length:u64 big-endian,
+then data[length] only for allocated runs. Adjacent runs with equal allocation
+state must merge, including allocated zeroes. Empty views have no runs.
+
+Receipt
+-------
+Key = SHA-256(ASCII "RR export 4" + NUL + canonical export).
+Encryption is AES-256-GCM. Nonce and sealed bytes are stored in jobs. The last
+16 sealed bytes are the authentication tag. AAD is raw ticket[16] || cookie[32].
+
+
+Transit receipts
+----------------
+Receipt plaintext beginning RRTC5 + NUL is a JSON transit capsule, not the final
+receipt. It records the post-handshake QUIC v1 / HTTP/3 context at capture start,
+including TLS cipher suite, initial direction-specific traffic secrets, expected
+next packet numbers, CID length and application identity. The capture is merged
+from two acquisition interfaces; original interface clock options are retained.
+No Initial or handshake packets are expected in this post-handshake acquisition.
+QUIC, HTTP/3 and QPACK follow RFC 9000, RFC 9001, RFC 9114 and RFC 9204.
+Packet numbers need not be consecutive. All packet authentication uses full
+packet numbers. HTTP fields may appear in initial or trailing field sections;
+combine the two for this application, rejecting duplicate application fields.
+
+Application rr-ledger/1: complete HTTP 200 responses carry opaque body bytes plus
+x-rr-ticket (16-byte hex), x-rr-seq (decimal), x-rr-prev (32-byte hex) and x-rr-node
+(32-byte hex). Node = SHA256(ASCII "RR node 5" + NUL + raw ticket + raw prev +
+sequence:u32 big-endian + concatenated HTTP DATA payload). A selected ledger has
+exactly capsule.length nodes, sequence 0..length-1, first prev all-zero, matching
+capsule.ticket, and terminal node capsule.root. Other valid proposals can coexist.
+
+Concatenate selected DATA bodies in sequence order. Delivery key = SHA256(ASCII
+"RR delivery 5" + NUL + sparse-export key[32] + SHA256(concatenated bodies)).
+delivery.bin is nonce[12] followed by AES-256-GCM ciphertext and tag[16]. AAD is
+raw capsule.ticket[16] || raw capsule.root[32]. The authenticated plaintext is
+the final receipt. There is no password or external network service.
